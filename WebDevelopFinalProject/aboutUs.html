@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>True Colors Personality Test - About Us</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;1,200;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Links js and Jq  -->
+    <script src="script.js"></script>
+    <script src="login.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="icon" type="image/png" href="./img/logo-color.svg">
+  </head>
+  <body class="aboutUs">
+    <!--=====NAVBAR=====-->
+    <header>
+      <link rel="icon" type="image/png" href="./img/logo">
+      <nav class="navbar">
+        <a class="logo" href="./index.html"
+          >True Colors Personality Test<span>.</span></a
+        >
+        <ul class="menu-links">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./introduction.html">Personality Test</a></li>
+          <li><a href="./aboutUs.html">About us</a></li>
+          <li><a href="./contactUs.html">Contact</a></li>
+          <li><a href="./login.html" id="login">Login</a></li>
+          <span id="uName"></span>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="about-section">
+      <div class="container-aboutus">
+        <div>
+          <h1 class="title-aboutUs">
+            Welcome to our unique and exciting personality testing website!
+          </h1>
+          <p>
+            At True Colors, we take pride in presenting a collaborative final
+            project created by five passionate minds in HTML, CSS, and
+            JavaScript. Our mission is to provide an interactive and enjoyable
+            experience that allows you to explore different aspects of your
+            personality through our innovative test.
+          </p>
+        </div>
+        <div>
+          <h3 class="subtitle-aboutUs">Our Team:</h3>
+          <p>
+            We are a team of five developers committed to creating engaging and
+            meaningful content. We came together to merge our individual skills
+            and create a platform that goes beyond simple coding. We are
+            thrilled to introduce you to our final project, which reflects not
+            only our technical expertise but also our dedication and passion for
+            psychology and user experience design.
+          </p>
+        </div>
+        <div>
+          <h3 class="subtitle-aboutUs">Our Vision:</h3>
+          <p>
+            At True Colors, we believe that self-awareness is the first step
+            towards personal growth. We want to provide you with a unique
+            experience that is not only entertaining but also thought-provoking.
+            Our personality test is designed to help you explore different
+            facets of who you are and provide valuable insights into yourself.
+          </p>
+        </div>
+        <div>
+          <h3 class="subtitle-aboutUs">Key Features:</h3>
+          <p>
+            Interactivity: Our website uses modern web technologies to offer you
+            an interactive and engaging experience. Attractive Design: We have
+            paid special attention to design to ensure that your experience is
+            visually pleasing and easy to follow. Detailed Results: After
+            completing the test, you will receive detailed results that will
+            help you better understand your personality. Creative Collaboration:
+            This project is the result of collaboration between five creative
+            minds, each bringing their unique expertise to make this experience
+            special.
+          </p>
+        </div>
+        <div>
+          <h3 class="subtitle-aboutUs">How It Works:</h3>
+          <p>
+            Take the Test: Find the personality test on our homepage and
+            carefully answer the thoughtfully selected questions. Personalized
+            Results: After completing the test, you will receive personalized
+            results based on your responses. Explore and Reflect: Explore
+            different facets of your personality and reflect on the detailed
+            descriptions we provide.
+          </p>
+        </div>
+        <div>
+          <br />
+          <h4>
+            Thank you for visiting True Colors. We hope you enjoy exploring your
+            personality as much as we enjoyed creating this experience for you!
+            Have fun discovering yourself
+          </h4>
+        </div>
+      </div>
+    </section>
+
+    <!--=====FOOTER=====-->
+
+    <footer class="footer">
+      <div class="container-footer">
+          <div class="project-info">
+            <p class="project-title">This Project Was Created By:</p>
+              <div class="contributors">
+                  <span>Natalia Andrea Herrera Espinosa</span> |
+                  <span>Veronica Elisa Martínez Contreras</span> |
+                  <span>Javier De Jesús Alcántara Pérez</span> |
+                  <span>Jose Antonio Bellorin Julio</span> |
+                  <span>German Camilo Cardenas Bejarano</span>
+              </div>
+          </div>
+          <div class="class-info">
+              <p>For the class of WEB CLIENT DEVELOPMENT</p>
+              <p>Professor Patrick Saint-Louis</p>
+              <p>2023</p>
+          </div>
+      </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var currentName = localStorage.getItem("currentName");
+      var login = localStorage.getItem("login");
+      var username = $("#uName").text(currentName);
+
+      if (login == "true") {
+        $("#login").text("Log out");
+
+        $("#login").on("click", () => {
+          //avoid the normal behavior of the event <a> to go the login
+          event.preventDefault();
+          localStorage.setItem("login", "false");
+          localStorage.setItem("currentName", "");
+          // Redirect to the index.html page
+          window.location.href = "./index.html";
+        });
+      } else {
+        $("#login").text("Log in");
+      }
+    });
+  </script>
+  </body>
+  
+</html>

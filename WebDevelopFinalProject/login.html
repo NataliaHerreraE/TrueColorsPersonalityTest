@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True Colors Personality Test - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="icon" type="image/png" href="./img/logo-color.svg">
+   
+</head>
+<body class="login">
+     <!--=====NAVBAR=====-->
+     <header>
+        <nav class="navbar">
+          <a class="logo" href="./index.html">True Colors Personality Test<span>.</span></a>
+          <ul class="menu-links">
+            <span id="close-menu-btn" class="material-symbols-outlined">close</span>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./introduction.html">Personality Test</a></li>
+            <li><a href="./aboutUs.html">About us</a></li>
+            <li><a href="./contactUs.html">Contact</a></li>
+            <li><a href="./login.html" id="login">Login</a></li>
+           
+          </ul>
+          <span id="uName"></span>
+        </nav>
+     
+      </header>
+
+      <!--=====form=====-->
+
+    <div class="login-container">
+        <form >
+        
+            <fieldset>
+            <h1>Login</h1>
+            <label for="userLabel">User:</label>
+            <input type="text" placeholder="Enter your Username here" id="user-login">
+        
+        
+            <label for="paswordLabel">Password:</label>
+            <input type="text" placeholder="Enter your password here"  id="password" >
+    
+           
+            <br>
+            <br>
+            <button type="button" onclick="" id="btn-form" disabled >Login</button>
+           
+    
+            <button type="button" onclick="" id="btn-ShowRegister" >Register</button>
+       
+        
+    
+        </fieldset>
+    
+    
+            <!-- Register a new User is hide in the begining -->
+            <div class="register">
+                <br>
+                <br>
+                <fieldset>
+                
+                <label for="name">Name:</label>
+                <input type="text" id="nName" name="name">
+    
+                <label for="username">Usuario:</label>
+                <input type="text" id="nUsername" name="username">
+        
+                <label for="password">Password:</label>
+                <input type="text" id="passwordGenerated" name="nPassword">
+                
+                <button type="button" onclick="" id="btn-generate" >Generate Password</button>
+                <button type="button" onclick="" id="btn-sendRegistration" >Send</button>
+    
+            </fieldset>
+            </div>
+        
+        </form>
+    </div>
+    
+    <!--<div id="register">
+    </div>-->
+    <br>
+        <span id="message"></span>
+
+    <script src="login.js"> </script>
+    <script> 
+    setInitialValues()
+      $('#btn-form').click(getUsernameAndPassword)
+      $('#btn-generate').click(generatePassword)
+      $('#btn-ShowRegister').click(ShowRegister)
+      $('#btn-sendRegistration').click(registerNewUser)
+   
+     
+      $(document).ready(function() {
+      $('#user, #password').on('input', function() {
+        var inputUsername = $('#user').val();
+        var inputPassword = $('#password').val();
+
+        if (inputUsername === "" || inputPassword === "") {
+            $('#btn-form').prop("disabled", true);
+        } else {
+            $('#btn-form').prop("disabled", false);
+        }
+    });
+    });
+
+
+    </script>
+
+    <!--=====FOOTER=====-->
+
+    <footer class="footer">
+        <div class="container-footer">
+            <div class="project-info">
+            <p class="project-title">This Project Was Created By:</p>
+                <div class="contributors">
+                    <span>Natalia Andrea Herrera Espinosa</span> |
+                    <span>Veronica Elisa Martínez Contreras</span> |
+                    <span>Javier De Jesús Alcántara Pérez</span> |
+                    <span>Jose Antonio Bellorin Julio</span> |
+                    <span>German Camilo Cardenas Bejarano</span>
+                </div>
+            </div>
+            <div class="class-info">
+                <p>For the class of WEB CLIENT DEVELOPMENT</p>
+                <p>Professor Patrick Saint-Louis</p>
+                <p>2023</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>
